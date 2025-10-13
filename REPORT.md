@@ -27,7 +27,7 @@ The reconstruction pipeline consists of five main stages:
 
 **System Specifications:**
 - Operating System: [Your OS]
-- GPU: [Your GPU Model]
+- GPU: RTX 4080 Super 
 - CUDA Version: [Version]
 - Python Version: [Version]
 
