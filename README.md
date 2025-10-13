@@ -167,7 +167,7 @@ ns-export pointcloud \
 ![NeRF Render](outputs/visualizations/nerf_render.png)
 
 **Training Metrics:**
-- Training Time: XX minutes
+- Training Time: 15 minutes
 - Final PSNR: XX.XX dB
 - GPU: [Your GPU Model]
 
@@ -180,9 +180,9 @@ ns-export pointcloud \
 **Specifications:**
 - Points: 1,000,000
 - Format: PLY with normals
-- File Size: XX MB
+- File Size: 27.5 MB
 
-[Download Point Cloud](outputs/export.ply)
+[Download Point Cloud](exports/point_cloud.ply)
 
 ## 🔧 Challenges & Solutions
 
