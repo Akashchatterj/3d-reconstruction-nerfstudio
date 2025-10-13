@@ -210,10 +210,12 @@ ns-export pointcloud \
 
 ### Challenge 4: [Installation Problem]
 
-**Issue:** colmap_to_json() TypeError
+**Issue:** colmap_to_json() TypeError.
+
 **Solution:** Removed deprecated argument camera_model="OPENCV" from the function call.
 
 **Issue:** tiny-cuda was not installing properly.
+
 **Solution:** No solution. Ran without tiny-cuda. Some sort compatability issue.
 
 ---
