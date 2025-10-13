@@ -266,7 +266,7 @@ ns-export pointcloud \
 ---
 
 **Author:** Akash Chatterjee  
-**Date:** OCT 14,2025  
+**Date:** OCT 14, 2025  
 
 ## 🔗 Quick Links
 
