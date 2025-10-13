@@ -186,9 +186,8 @@ ns-train nerfacto \
 **Visual Quality Assessment:**
 
 ![NeRF Rendering](outputs/visualizations/nerf_render.png)
-[![Watch the NeRF Rendering Video](outputs/visualizations/nerf_render.png)](outputs/visualizations/nerf_render_video.mp4)
-<video src="https://github.com/Akashchatterj/3d-reconstruction-nerfstudio/blob/9a5c4bb290d1e39efa938747a9ba55d596732a39/outputs/visualizations/nerf_render_video.mp4" width="640" controls>
-</video>
+🎬 [Click to Watch the NeRF Rendering Video](https://raw.githubusercontent.com/Akashchatterj/3d-reconstruction-nerfstudio/main/outputs/visualizations/nerf_render_video.mp4)
+
 
 **Strengths:**
 - ✓ [e.g., "Accurate geometry reproduction"]
