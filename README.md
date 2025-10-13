@@ -158,7 +158,7 @@ ns-export pointcloud \
 
 | Perspective View | Top View |
 |:----------------:|:--------:|
-| ![Perspective](outputs/camera_poses_3d.png) | ![Top View](outputs/camera_poses_side_views.png) |
+| ![Perspective](outputs/visualizations/camera_poses_3d.png) | ![Top View](outputs/visualizations/camera_poses_side_views.png) |
 
 **Assessment:** The camera poses show [smooth/erratic] trajectory with [good/poor] coverage of the scene. [Add your specific observations]
 
