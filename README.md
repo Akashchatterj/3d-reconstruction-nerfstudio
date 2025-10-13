@@ -62,7 +62,7 @@ Extract frames and estimate camera poses from your video:
 ns-process-data video \
   --data YOUR_VIDEO.mp4 \
   --output-dir YOUR_OUTPUT_DIR \
-  --num-frames-target 70
+  --num-frames-target 120
 ```
 
 **Parameters:**
