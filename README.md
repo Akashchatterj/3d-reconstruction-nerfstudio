@@ -188,25 +188,25 @@ ns-export pointcloud \
 
 ### Challenge 1: [Camera Pose Estimation Quality]
 
-**Issue:** [Describe any issues with pose estimation - e.g., "Initial COLMAP reconstruction failed due to insufficient feature matches"]
+**Issue:** During the preprocessing stage, COLMAP was unable to properly match image features and estimate accurate camera poses. Out of the extracted frames, only 2 images were successfully matched, meaning COLMAP found poses for only about 1% of the dataset. This resulted in poor initialization for NeRF training and extremely slow convergence (7–8 hours with only 2 valid frames).Also not able to create point Cloud out of it.
 
-**Solution:** [How you solved it - e.g., "Increased num-frames-target to 100 and ensured better lighting conditions in the video"]
+**Solution:** I found that downgrading COLMAP from version 3.11 to 3.8 resolved the pose estimation problem completely as COLMAP 3.8 works better because it uses an older, more stable and compatible matching system that matches consecutive frames more effectively and produces output Nerfstudio can easily read. Finally the reconstruction was successful and camera poses were estimated correctly.
 
 ---
 
 ### Challenge 2: [Training Time/GPU Memory]
 
-**Issue:** [e.g., "Training was slow on limited GPU memory"]
+**Issue:** Training was very slow and frequently ran out of GPU memory when using RTX 3050 (4 GB) and RTX 3060 (6 GB) GPUs. I also tried running the training on Google Colab, where it initially worked but was limited by Colab’s restricted GPU availability and session timeouts. Eventually, the GPU memory on Colab was also exhausted, causing the training process to stop midway.
 
-**Solution:** [e.g., "Reduced batch size and used mixed precision training"]
+**Solution:** To overcome this, I switched to a system equipped with an RTX 4080 Super (16 GB) GPU. With this higher memory capacity and faster processing power, the training ran smoothly without interruptions and achieved 100% GPU utilization throughout the process.
 
 ---
 
 ### Challenge 3: [Point Cloud Quality]
 
-**Issue:** [e.g., "Initial export had many outliers"]
+**Issue:** Initially, COLMAP was able to match only 2 images successfully from the extracted frames. After training for 7–8 hours using just these 2 valid frames, the model failed to generate a meaningful point cloud, resulting in an incomplete reconstruction.
 
-**Solution:** [e.g., "Enabled outlier removal and used tight bounding box cropping"]
+**Solution:** Initially, COLMAP was able to match only 2 images successfully from the extracted frames. After training for 7–8 hours using just these 2 valid frames, the model failed to generate a meaningful point cloud, resulting in an incomplete reconstruction.
 
 ---
 
