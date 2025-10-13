@@ -199,16 +199,17 @@ ns-train nerfacto \
 
 
 **Strengths:**
-- ✓ [e.g., "Accurate geometry reproduction"]
-- ✓ [e.g., "Realistic texture and color"]
-- ✓ [e.g., "Good view synthesis from novel angles"]
+-  The cylindrical corn structure is precisely reconstructed with complete surface coverage and no holes or missing regions.
+-  Golden-yellow corn kernels display natural color variation and authentic material appearance with proper matte finish.
+-  Proper shading on corn surface with realistic shadow cast on the platform base.
+-  Blue circular base, ArUco markers, and multi-layered structure all accurately captured with sharp edges.
 
 **Weaknesses:**
-- ✗ [e.g., "Some floating artifacts in background"]
-- ✗ [e.g., "Slight blur in fine details"]
+- Ground plane and distant areas show intentional blur, which is expected NeRF behavior that prioritizes foreground object quality.
+- Very subtle softening on extreme fine details (individual kernel ridges), though overall kernel structure remains clear.
 
 **Comparison to Expectations:**
-[Discuss whether results met, exceeded, or fell short of expectations and why]
+The reconstruction demonstrates photorealistic quality suitable for high-quality visualization, analysis, and potential downstream applications.Appropriate frame count - 120 frames provided sufficient viewpoint sampling density for fine detail capture. Also Full 30,000 iterations allowed complete convergence without premature stopping.
 
 ### 5.5 Challenges During Training
 
@@ -275,7 +276,7 @@ ns-export pointcloud \
 |----------|-------|
 | Total Points | 1,000,000 |
 | File Format | PLY (binary) |
-| File Size | [XX] MB |
+| File Size | 27.5 MB |
 | Contains Normals | Yes |
 | Contains Colors | Yes |
 
