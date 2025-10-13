@@ -214,8 +214,8 @@ ns-export pointcloud \
 
 - **Setup Complexity:** Nerfstudio installation was straightforward but required CUDA toolkit setup
 - **COLMAP Dependency:** Pose estimation quality heavily depends on video quality and camera movement
-- **Training Duration:** Approximately XX minutes on [GPU model]
-- **Memory Usage:** Peak GPU memory: XX GB
+- **Training Duration:** Approximately 15 minutes on [GPU model]
+- **Memory Usage:** Peak GPU memory: 13 GB
 
 ## 📁 Project Structure
 
@@ -271,6 +271,5 @@ ns-export pointcloud \
 
 ## 🔗 Quick Links
 
-- [Live Demo](#) (if available)
 - [Weights & Biases Dashboard](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
-- [Download Full Results](#) (if hosting elsewhere)
+
