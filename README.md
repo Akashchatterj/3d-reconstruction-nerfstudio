@@ -272,5 +272,5 @@ ns-export pointcloud \
 ## 🔗 Quick Links
 
 - [Live Demo](#) (if available)
-- [Weights & Biases Dashboard](#) (https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
+- [Weights & Biases Dashboard](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
 - [Download Full Results](#) (if hosting elsewhere)
