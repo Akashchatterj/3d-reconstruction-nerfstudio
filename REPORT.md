@@ -73,14 +73,14 @@ ns-process-data video \
 ### 3.3 Results
 
 **Output Generated:**
-- Total frames extracted: [XX]
-- COLMAP sparse reconstruction: [Success/Partial/Failed]
-- Transform file generated: Yes/No
+- Total frames extracted: 120
+- COLMAP sparse reconstruction: Success
+- Transform file generated: Yes
 
 **Observations:**
-- Frame quality: [Excellent/Good/Poor]
+- Frame quality: Excellent
 - Feature detection: [Describe COLMAP's performance]
-- Processing time: [X] minutes
+- Processing time: 60 minutes
 
 **Challenges:**
 - [e.g., "Low texture areas caused sparse feature matches"]
