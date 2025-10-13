@@ -158,13 +158,13 @@ ns-export pointcloud \
 
 | Perspective View | Top View |
 |:----------------:|:--------:|
-| ![Perspective](outputs/pose_perspective.png) | ![Top View](outputs/pose_top.png) |
+| ![Perspective](outputs/visualizations/camera_poses_3d.png) | ![Top View](outputs/visualizations/camera_poses_side_views.png) |
 
-**Assessment:** The camera poses show [smooth/erratic] trajectory with [good/poor] coverage of the scene. [Add your specific observations]
+**Assessment:** The camera poses show smooth trajectory with good coverage of the scene. 
 
 ### NeRF Reconstruction
 
-![NeRF Render](outputs/nerf_render.png)
+![NeRF Render](outputs/visualizations/Screenshot from 2025-10-13 00-49-16.png")
 
 **Training Metrics:**
 - Training Time: XX minutes
