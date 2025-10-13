@@ -51,11 +51,11 @@ The reconstruction pipeline consists of five main stages:
 
 | Property | Value |
 |----------|-------|
-| Resolution | [1080x1920] |
-| Duration | [ 19.99 seconds] |
-| Frame Rate | [ 29.97 fps] |
-| Format | [MOV] |
-| Camera Movement | [Circular] |
+| Resolution | 1080x1920 |
+| Duration |  19.99 seconds |
+| Frame Rate |  29.97 fps |
+| Format | MOV |
+| Camera Movement | Circular |
 
 ### 3.2 Processing Configuration
 
