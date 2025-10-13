@@ -265,9 +265,8 @@ ns-export pointcloud \
 
 ---
 
-**Author:** [Your Name]  
-**Course:** [Course Name/Code]  
-**Date:** [Submission Date]  
+**Author:** Akash Chatterjee  
+**Date:** OCT 14,2025  
 
 ## 🔗 Quick Links
 
