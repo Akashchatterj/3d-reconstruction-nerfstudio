@@ -206,7 +206,15 @@ ns-export pointcloud \
 
 **Issue:** Initially, COLMAP was able to match only 2 images successfully from the extracted frames. After training for 7–8 hours using just these 2 valid frames, the model failed to generate a meaningful point cloud, resulting in an incomplete reconstruction.
 
-**Solution:** Initially, COLMAP was able to match only 2 images successfully from the extracted frames. After training for 7–8 hours using just these 2 valid frames, the model failed to generate a meaningful point cloud, resulting in an incomplete reconstruction.
+**Solution:** After downgrading COLMAP to a more stable version and improving feature matching, all frames were successfully aligned. I then set the target frame count (--num-frames-target) to 70 and 120, which provided enough image diversity for training. With these changes, the model successfully generated a high-quality point cloud of around 1,000,000 points in each run.
+
+### Challenge 4: [Installation Problem]
+
+**Issue:** colmap_to_json() TypeError
+**Solution:** Removed deprecated argument camera_model="OPENCV" from the function call.
+
+**Issue:** tiny-cuda was not installing properly.
+**Solution:** No solution. Ran without tiny-cuda. Some sort compatability issue.
 
 ---
 
