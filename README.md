@@ -222,9 +222,9 @@ ns-export pointcloud \
 
 ### General Observations
 
-- **Setup Complexity:** Nerfstudio installation was straightforward but required CUDA toolkit setup
-- **COLMAP Dependency:** Pose estimation quality heavily depends on video quality and camera movement
-- **Training Duration:** Approximately 15 minutes on [GPU model]
+- **Setup Complexity:** Installing Nerfstudio was challenging due to compatibility issues, especially on Windows. Several packages and GPU libraries failed to install properly. The setup was much smoother on Linux, where dependencies resolved automatically and GPU support worked reliably.
+- **COLMAP Dependency:** Pose estimation quality depended on both the video and the COLMAP version; initially, few frames were matched, but downgrading to COLMAP 3.8 improved feature matching and camera pose estimation.
+- **Training Duration:** Approximately 15 minutes on RTX 4080 Super GPU.
 - **Memory Usage:** Peak GPU memory: 13 GB
 
 ## 📁 Project Structure
