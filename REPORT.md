@@ -186,7 +186,7 @@ ns-train nerfacto \
 **Visual Quality Assessment:**
 
 ![NeRF Rendering](outputs/visualizations/nerf_render.png)
-![NeRF Rendering Video](outputs/visualizations/nerf_render_video.webm)
+![NeRF Rendering Video](outputs/visualizations/nerf_render_video.mp4)
 
 **Strengths:**
 - ✓ [e.g., "Accurate geometry reproduction"]
