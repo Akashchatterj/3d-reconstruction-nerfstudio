@@ -265,9 +265,6 @@ ns-export pointcloud \
 
 ---
 
-**Author:** Akash Chatterjee  
-**Date:** OCT 14, 2025  
-
 ## 🔗 Quick Links
 
 - [Weights & Biases Dashboard](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
