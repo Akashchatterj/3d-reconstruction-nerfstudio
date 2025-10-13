@@ -168,7 +168,7 @@ ns-export pointcloud \
 
 **Training Metrics:**
 - Training Time: 15 minutes
-- Final PSNR: 30 dB
+- Final PSNR: 33 dB
 - GPU: RTX 4080 Super
 
 **Quality Assessment:** The reconstruction captures fine geometric details with high accuracy. The corn object shows excellent surface detail preservation, with individual kernels clearly distinguishable and proper depth representation. Texture fidelity is very good, demonstrating realistic material appearance with accurate color reproduction of the golden-yellow corn kernels and the blue platform base.
