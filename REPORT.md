@@ -26,7 +26,7 @@ The reconstruction pipeline consists of five main stages:
 ### 2.1 Environment Configuration
 
 **System Specifications:**
-- Operating System: [Your OS]
+- Operating System: Linux Ubentu
 - GPU: RTX 4080 Super 
 - CUDA Version: [Version]
 - Python Version: [Version]
@@ -34,14 +34,18 @@ The reconstruction pipeline consists of five main stages:
 ### 2.2 Installation Process
 
 **Challenges Encountered:**
-- [List any installation issues, e.g., "CUDA compatibility issues with PyTorch"]
-- [e.g., "COLMAP installation required additional system dependencies"]
+- colmap_to_json() TypeError.
+- COLMAP installation required additional dependencies and showed compatibility issues on Windows OS.
+- Encountered CUDA and PyTorch version mismatches, causing GPU initialization failures.
+- Installation was overall more error-prone on Windows due to missing environment variables and path issues.
 
 **Solutions Applied:**
-- [How you resolved each issue]
-- [Any workarounds or specific configuration needed]
+- Removed deprecated argument camera_model="OPENCV" from the function call.
+- Switched to a Linux environment, where dependencies installed smoothly and GPU drivers were configured automatically.
+- Reinstalled CUDA and PyTorch with compatible versions as per Nerfstudio documentation.
+- Verified installation using test commands (ns-train --help and ns-process-data --help) to ensure the setup was working correctly before running experiments.
 
-**Time Required:** Approximately [X] hours for complete setup
+**Time Required:** Approximately 3 hours for complete setup
 
 ---
 
@@ -67,7 +71,7 @@ ns-process-data video \
 ```
 
 **Parameters Selected:**
-- **num-frames-target: 70** - Chosen because [explain your reasoning]
+- **num-frames-target: 120** - Chosen because to provide dense coverage of the 360° camera trajectory (3° spacing between frames) while maintaining computational efficiency. This ensures sufficient overlap for COLMAP feature matching and adequate training data for NeRF convergence.
 - Processing method: COLMAP (default)
 
 ### 3.3 Results
@@ -79,16 +83,16 @@ ns-process-data video \
 
 **Observations:**
 - Frame quality: Excellent
-- Feature detection: [Describe COLMAP's performance]
+- Feature detection: Initially, COLMAP detected and matched features in only 2 frames due to limited camera motion and low texture in the video. After downgrading to COLMAP 3.8 and using the Sequential Matcher, feature detection improved, matching all frames successfully for accurate pose estimation.
 - Processing time: 60 minutes
 
 **Challenges:**
-- [e.g., "Low texture areas caused sparse feature matches"]
-- [e.g., "Motion blur in some frames affected reconstruction"]
+- Very few feature matches were detected — only 2 frames matched successfully due to limited camera movement and low texture in the video.
+- The short video length and repetitive background further reduced distinct keypoints for COLMAP to track.
 
 **Solutions:**
-- [How you addressed these issues]
-
+- Downgraded to COLMAP 3.8, which provided more stable and effective feature matching.
+  
 ---
 
 ## 4. Task 2: Pose Estimation Analysis
@@ -102,36 +106,40 @@ The camera pose visualization script generated two critical views:
 ![Perspective View](outputs/visualizations/camera_poses_side_views.png)
 
 **Observations:**
-- Camera trajectory: [Describe the path - smooth arc, irregular movement, etc.]
-- Coverage: [How well the camera covers the scene]
-- Pose distribution: [Even/Clustered/Sparse]
+- Camera trajectory: Shows a clean, elliptical path around the object.
+- Coverage: Complete 360° coverage with cameras evenly distributed around the entire circumference of the scene.
+- Pose distribution: Even - cameras are uniformly spaced along the trajectory with consistent angular separation of approximately 3° between frames.
 
 **Quality Indicators:**
-- ✓ [What looks good]
-- ✗ [What could be improved]
+-  Smooth elliptical trajectory without erratic jumps or outliers.
+-  Complete 360° loop with start and end positions aligned.
+-  Consistent camera-to-object distance (only 7% variance).
+-  No pose estimation failures - all 120 frames successfully registered.
+-  All camera orientations pointing toward the scene center.
+-  Slight elliptical distortion instead of perfect circle (minor impact, not a real problem).
 
 #### 4.1.2 Top View Analysis
 
 ![Top View](outputs/visualizations/camera_poses_3d.png)
 
 **Observations:**
-- Spatial distribution: [Describe camera positions from above]
-- Scene coverage: [Percentage or qualitative assessment]
-- Potential blind spots: [Areas not well covered]
+- Spatial distribution: Consistent circular motion in the XY plane with uniform angular spacing of approximately 3° between frames.
+- Scene coverage: 100% - complete circular coverage with no gaps or blind spots, ensuring all sides of the object are captured from multiple angles.
+- Potential blind spots: None identified - the complete 360° trajectory ensures all viewing angles are covered.
 
 ### 4.2 Pose Estimation Quality Assessment
 
 **Metrics Considered:**
-1. **Reconstruction Coverage:** [X%] of scene well-covered
-2. **Pose Accuracy:** [Based on reprojection errors if available]
-3. **Camera Distribution:** [Even/Uneven]
+1. **Reconstruction Coverage:** 100% of scene well-covered with complete 360° camera trajectory providing comprehensive viewpoint sampling.
+2. **Pose Accuracy:** Excellent having smooth trajectory with no outliers, consistent camera distances ranging from 3.58 to 3.87 units (only 7% variance), and all orientations properly aligned toward the scene center.
+3. **Camera Distribution:** Even with 120 frames uniformly distributed along elliptical path with approximately 3° angular spacing between consecutive frames.
 
 **Overall Assessment:** 
-The pose estimation quality is rated as [Excellent/Good/Fair/Poor] because [provide detailed reasoning].
+The camera poses demonstrate all key indicators of successful reconstruction including: (1) smooth elliptical trajectory without discontinuities, (2) 100% COLMAP registration success for all 120 frames, (3) correct orientation alignment with all cameras facing the scene center, (4) outstanding distance consistency with only 7% variance, (5) natural smooth height variation pattern, and (6) complete 360° angular coverage eliminating blind spots. This level of quality indicates excellent video capture technique and successful feature matching.
 
 **Impact on NeRF Training:**
-- [How pose quality will affect training]
-- [Prediction of reconstruction quality based on poses]
+- High-quality reconstruction expected with predicted PSNR values exceeding 28 dB, potentially reaching 30+ dB due to the excellent pose quality and complete coverage.
+- Fast and stable convergence anticipated due to well-distributed camera poses enabling smooth gradient flow during training, with minimal risk of getting stuck in poor local minima.
 
 ---
 
@@ -292,29 +300,6 @@ ns-export pointcloud \
 
 ---
 
-## 8. Comparative Analysis
-
-### 8.1 NeRF vs Traditional Methods
-
-| Aspect | NeRF (This Project) | Traditional SfM/MVS |
-|--------|---------------------|---------------------|
-| Input Requirements | Monocular video | Multiple views |
-| Reconstruction Quality | [Your assessment] | [Comparison] |
-| Processing Time | [X] minutes | [Typical time] |
-| Output Type | Continuous field + PC | Mesh/Point cloud |
-
-### 8.2 nerfacto vs Other NeRF Methods
-
-**Advantages of nerfacto:**
-- [List benefits observed]
-- Generalist approach works well
-
-**Potential Alternatives:**
-- instant-ngp: Faster training
-- mip-nerf: Better anti-aliasing
-- [Others relevant to your scene]
-
----
 
 ## 9. Lessons Learned
 
