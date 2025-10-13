@@ -164,7 +164,7 @@ ns-export pointcloud \
 
 ### NeRF Reconstruction
 
-![NeRF Render](outputs/nerf_render.png)
+![NeRF Render](outputs/visualizations/nerf_render.png)
 
 **Training Metrics:**
 - Training Time: XX minutes
