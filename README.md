@@ -171,7 +171,7 @@ ns-export pointcloud \
 - Final PSNR: XX.XX dB
 - GPU: [Your GPU Model]
 
-**Quality Assessment:** The reconstruction captures [describe quality - fine details, geometry accuracy, texture fidelity, etc.]
+**Quality Assessment:** The reconstruction captures fine geometric details with high accuracy. The corn object shows excellent surface detail preservation, with individual kernels clearly distinguishable and proper depth representation. Texture fidelity is very good, demonstrating realistic material appearance with accurate color reproduction of the golden-yellow corn kernels and the blue platform base.
 
 ### Point Cloud Export
 
