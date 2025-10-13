@@ -68,7 +68,7 @@ ns-process-data video \
 **Parameters:**
 - `--data`: Path to input video file
 - `--output-dir`: Directory for processed data
-- `--num-frames-target`: Number of frames to extract (70 recommended)
+- `--num-frames-target`: Number of frames to extract (120 recommended)
 
 **Output:** Extracted frames + COLMAP camera pose estimates
 
