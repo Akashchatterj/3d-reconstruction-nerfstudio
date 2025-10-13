@@ -162,8 +162,8 @@ ns-train nerfacto \
 - Total Duration: [X] minutes/hours
 
 **Hardware Performance:**
-- GPU Utilization: [Average %]
-- Peak Memory Usage: [XX GB]
+- GPU Utilization: 100%
+- Peak Memory Usage:  12.5GB
 - Temperature: [If monitored]
 
 ### 5.3 Training Metrics
