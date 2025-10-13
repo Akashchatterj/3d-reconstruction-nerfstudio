@@ -99,7 +99,7 @@ The camera pose visualization script generated two critical views:
 
 #### 4.1.1 Perspective View Analysis
 
-![Perspective View](outputs/pose_perspective.png)
+![Perspective View](outputs/visualizations/camera_poses_side_views.png)
 
 **Observations:**
 - Camera trajectory: [Describe the path - smooth arc, irregular movement, etc.]
@@ -112,7 +112,7 @@ The camera pose visualization script generated two critical views:
 
 #### 4.1.2 Top View Analysis
 
-![Top View](outputs/pose_top.png)
+![Top View](outputs/visualizations/camera_poses_3d.png)
 
 **Observations:**
 - Spatial distribution: [Describe camera positions from above]
