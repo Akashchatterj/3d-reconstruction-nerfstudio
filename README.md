@@ -252,19 +252,23 @@ ns-export pointcloud \
 ## 🎓 Reflections
 
 ### What Worked Well
-- [Add your observations about what went smoothly]
-- The nerfacto pipeline produced high-quality results
-- Pose estimation was robust with proper video input
+- The Nerfacto pipeline produced high-quality 3D reconstructions and point clouds once proper frames were used.
+- Pose estimation worked reliably after selecting distinct frames and using COLMAP 3.8.
+- Training ran smoothly on a high-memory GPU (RTX 4080 16 GB) without interruptions.
+- The Nerfstudio viewer made it easy to crop and export the object region for cleaner outputs.
+- Converting COLMAP outputs to Nerfstudio format (transforms.json) was straightforward once the correct COLMAP version and frame selection were used.
 
 ### Areas for Improvement
-- [Add suggestions for future improvements]
-- Could experiment with different NeRF variants (instant-ngp, etc.)
-- Fine-tuning bounding box parameters could improve point cloud quality
-
+- Experiment with different NeRF variants (e.g., Instant-NGP, mip-NeRF) for faster training or higher-quality reconstructions.
+- Fine-tune bounding box parameters in the viewer to further improve point cloud quality and reduce background noise.
+- Explore GPU memory optimization techniques to allow training with higher frame counts on smaller GPUs.
+- Investigate COLMAP parameter tuning (feature matcher thresholds, sequential matching settings) for more robust pose estimation on challenging videos.
+  
 ### Key Learnings
-- [Your key takeaways from the assignment]
-- Understanding the importance of camera pose quality for NeRF training
-- Trade-offs between point cloud density and file size
+- High-quality camera poses are crucial for successful NeRF training; poor pose estimation can drastically reduce reconstruction quality.
+- Frame selection and video preprocessing significantly impact COLMAP’s feature matching and overall 3D reconstruction.
+- There is a trade-off between point cloud density and training time / GPU usage; higher density requires more resources.
+- Different COLMAP versions and NeRF variants can affect reconstruction success, highlighting the importance of software compatibility.
 
 ## 📚 References
 
