@@ -358,16 +358,15 @@ Training was monitored using W&B logging, providing real-time visualization of a
 ## 10. Future Improvements
 
 ### 10.1 Short-term Enhancements
-1. [Specific improvement #1]
-2. [Specific improvement #2]
-3. [Specific improvement #3]
+1. Stop training when improvement drops below threshold (e.g., <0.1 dB per 1,000 iterations).
+2. Conduct systematic study comparing different frame counts (70, 100, 120, 150, 200).This will identify minimum frame count for target quality, reducing COLMAP processing time.
+3. Improve input video quality by ensuring stable camera motion, better lighting, and minimal background clutter for more accurate pose estimation.
 
 ### 10.2 Advanced Explorations
-- Experiment with different NeRF architectures
-- Implement custom loss functions
-- Explore mesh extraction methods
-- [Other advanced topics]
-
+- Experiment with different NeRF architectures such as nerfacto-big or depth-nerfacto for faster and higher-quality reconstructions.
+- Explore mesh extraction and surface reconstruction techniques to generate editable 3D models from NeRF outputs.
+- Convert models for interactive web/AR applications using model compression and efficient rendering.
+  
 ---
 
 ## 11. Conclusion
@@ -376,40 +375,23 @@ Training was monitored using W&B logging, providing real-time visualization of a
 
 This project successfully demonstrated the complete pipeline for 3D reconstruction from monocular video using Nerfstudio. The key achievements include:
 
-- ✓ [Achievement 1]
-- ✓ [Achievement 2]
-- ✓ [Achievement 3]
+- ✓ Excellent camera pose estimation - Achieved 100% COLMAP registration success with complete 360° coverage, uniform camera distribution (~3° spacing), and outstanding distance consistency (7% variance), providing an optimal foundation for NeRF training.
+- ✓ Exceptional reconstruction quality - Final PSNR of 33.0 dB significantly exceeded typical NeRF results (25-28 dB), with photorealistic rendering demonstrating fine detail preservation including individual corn kernel structures and accurate platform geometry.
+- ✓ High-quality point cloud export - Generated clean 1,000,000 point cloud with uniform density, proper surface normals, and minimal outliers (<1%), suitable for immediate use in visualization and downstream mesh reconstruction applications.
 
 ### 11.2 Overall Assessment
 
-**Success Rate:** [X/5 tasks completed successfully]
+**Success Rate:** 5/5 tasks completed successfully with all deliverables meeting or exceeding quality expectations.
 
-**Quality Rating:** [Your overall quality assessment]
+**Quality Rating:** The reconstruction demonstrates professional-grade quality suitable for applications in computer vision research, visualization, digital archiving, and educational demonstrations. The combination of high PSNR (33 dB), low perceptual loss (LPIPS 0.12), and clean geometry validates the effectiveness of the complete pipeline.
 
-**Time Investment:** [Total hours spent]
 
 ### 11.3 Final Thoughts
 
-[Concluding reflections on the assignment, what you learned, and the value of NeRF technology]
+This assignment provided invaluable experience with state-of-the-art 3D reconstruction, bridging classical computer vision (COLMAP) with neural rendering (NeRF). Key learnings include the critical importance of camera pose quality, the power of modern accessible tools like Nerfstudio, and the value of real-time training monitoring.
 
 ---
 
-## 12. Appendices
-
-### Appendix A: Command Reference
-[Quick reference for all commands used]
-
-### Appendix B: Error Log
-[Any errors encountered and solutions]
-
-### Appendix C: Resource Links
-- [Useful documentation links]
-- [Tutorial references]
-- [Community resources]
-
----
-
-**Report Prepared By:** [Your Name]  
-**Date:** [Submission Date]  
+**Report Prepared By:** Akash Chatterjee 
+**Date:** OCT 14, 2025
 **Assignment:** 3D Reconstruction with Nerfstudio  
-**Total Pages:** [Auto-count]
