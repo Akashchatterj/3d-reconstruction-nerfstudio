@@ -309,7 +309,7 @@ ns-export pointcloud \
 
 Training was monitored using W&B logging, providing real-time visualization of all metrics.
 
-![Dashboard Link:](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
+![Dashboard Link](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
 
 **Key Observations from Training Curves:**
 
@@ -332,22 +332,26 @@ Training was monitored using W&B logging, providing real-time visualization of a
 ### 9.1 Technical Insights
 
 1. **Camera Pose Quality is Critical**
-   - [Specific observations about pose-quality relationship]
+   - The overall NeRF reconstruction quality heavily depends on the accuracy of camera poses. Poor feature matching in COLMAP (as seen in version 3.11) led to incomplete reconstructions, whereas downgrading to COLMAP 3.8 significantly improved pose estimation and final 3D results.
    
 2. **Video Characteristics Matter**
-   - [What you learned about input video requirements]
+   - Smooth camera motion, sufficient lighting, and clear, non-blurry frames are essential for reliable feature extraction and pose matching. Using fewer but distinct frames (30–50) from the video provided better results than extracting too many similar frames.
 
 3. **Training Hyperparameters**
-   - [Insights about parameter tuning]
+   - Properly setting parameters such as --num-frames-target (e.g., 70–120) and ensuring adequate GPU memory had a direct impact on model convergence and point cloud density. Higher-end GPUs (like RTX 4080 Max-Q) allowed smoother and faster training.
 
 ### 9.2 Workflow Optimization
 
 **Best Practices Identified:**
-- [List effective approaches you discovered]
-- [Workflow improvements]
-
+- Use COLMAP 3.8 with Sequential Matcher for better feature matching in short video clips.
+- Run Nerfstudio on Linux OS for smoother installation and GPU configuration.
+- Keep frame selection balanced — fewer high-quality frames perform better than too many redundant ones.
+- Regularly monitor GPU memory usage during training to avoid crashes.
+  
 **Pitfalls to Avoid:**
-- [Common mistakes and how to prevent them]
+- Avoid using COLMAP 3.11, as it caused pose estimation failures in smaller datasets.
+- Do not extract too many similar frames from short videos — it leads to poor matches and failed reconstruction.
+- Avoid running long training sessions on low-memory GPUs or free Colab, as they often crash before completion.
 
 ---
 
