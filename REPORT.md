@@ -338,7 +338,7 @@ Training was monitored using W&B logging, providing real-time visualization of a
    - Smooth camera motion, sufficient lighting, and clear, non-blurry frames are essential for reliable feature extraction and pose matching. Using fewer but distinct frames (30–50) from the video provided better results than extracting too many similar frames.
 
 3. **Training Hyperparameters**
-   - Properly setting parameters such as --num-frames-target (e.g., 70–120) and ensuring adequate GPU memory had a direct impact on model convergence and point cloud density. Higher-end GPUs (like RTX 4080 Max-Q) allowed smoother and faster training.
+   - Properly setting parameters such as --num-frames-target (e.g., 70–120) and ensuring adequate GPU memory had a direct impact on model convergence and point cloud density. Higher-end GPUs (like RTX 4080 Super) allowed smoother and faster training.
 
 ### 9.2 Workflow Optimization
 
