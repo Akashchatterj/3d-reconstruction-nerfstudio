@@ -305,6 +305,10 @@ ns-export pointcloud \
 
 ---
 
+## 8. Training Monitoring via Weights & Biases
+
+Training was monitored using W&B logging, providing real-time visualization of all metrics.
+
 
 ## 9. Lessons Learned
 
