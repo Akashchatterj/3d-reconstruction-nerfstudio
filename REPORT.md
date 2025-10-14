@@ -301,13 +301,29 @@ ns-export pointcloud \
 - Normal vectors appear consistent and properly oriented based on the smooth visual appearance of the point cloud. The normals correctly represent surface orientation across the corn's cylindrical geometry and the platform's planar surfaces.
 
 **Outlier Removal Effectiveness:**
-- Highly effective - minimal noise (<1% scattered points at platform edges), clean background, sharp edges preserved. Point cloud is production-ready with excellent overall cleanliness.
+- Highly effective  minimal noise (<1% scattered points at platform edges), clean background, sharp edges preserved. Point cloud is production-ready with excellent overall cleanliness.
 
 ---
 
 ## 8. Training Monitoring via Weights & Biases
 
 Training was monitored using W&B logging, providing real-time visualization of all metrics.
+![Dashboard Link:](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
+
+**Key Observations from Training Curves:**
+
+![PSNR (Peak Signal-to-Noise Ratio) Progression](outputs/visualizations/psnr_plot.png)
+![lpips over training duration](outputs/visualizations/lpips_plot.png)
+![Structural Similarity Index Progression](outputs/visualizations/ssim.png)
+![Train Loss Plot](outputs/visualizations/Train_loss.png)
+
+- PSNR: Increased from 20 dB to 33 dB, with rapid initial improvement (80% of gains in first 5,000 iterations) and smooth convergence.
+- LPIPS: Decreased from 0.35 to 0.12, indicating excellent perceptual quality.
+- SSIM: Stabilized around 0.75 with expected oscillation due to evaluation on discrete validation images.
+- Train Loss: Smooth decrease from 0.16 to 0.009, demonstrating stable training without anomalies.
+
+  **Analysis:** All metrics show coordinated improvement and stable convergence. The final PSNR of 33 dB significantly exceeds typical results (25-28 dB), validating the excellent camera pose quality. 
+
 
 
 ## 9. Lessons Learned
