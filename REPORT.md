@@ -213,16 +213,21 @@ The reconstruction demonstrates photorealistic quality suitable for high-quality
 
 ### 5.5 Challenges During Training
 
-#### Challenge 1: [Specific Issue]
-**Description:** [Detailed explanation]
-**Impact:** [How it affected results]
-**Resolution:** [Steps taken to resolve]
+#### Challenge 1: Limited Pose Estimation and Poor Reconstruction
 
-#### Challenge 2: [Specific Issue]
-**Description:** [Detailed explanation]
-**Impact:** [How it affected results]
-**Resolution:** [Steps taken to resolve]
+**Description:** During preprocessing, COLMAP was able to match only 2 images successfully out of all extracted frames, resulting in poor camera pose estimation. This happened mainly due to limited camera movement, low-texture regions in the video, and compatibility issues with COLMAP version 3.11.
 
+**Impact:** With only 2 valid frames, the NeRF model could not learn proper scene geometry, and the training took 7–8 hours without generating a meaningful point cloud.
+
+**Resolution:** The issue was resolved by downgrading COLMAP to version 3.8, which improved feature matching and pose estimation. Additionally, fewer but more distinct frames (30–50) were used, leading to successful reconstruction and generation of a dense 1M+ point cloud.
+
+#### Challenge 2: GPU Memory Limitation and Slow Training
+
+**Description:** Training on RTX 3050 (4 GB) and RTX 3060 (6 GB) GPUs resulted in frequent memory overflows and extremely slow processing. Attempts on Google Colab also failed midway due to limited GPU memory and session timeouts.
+
+**Impact:** Training often stopped before completion, preventing full model convergence and making experimentation time-consuming.
+
+**Resolution:** The training was successfully completed on a high-memory GPU (RTX 4080 Super, 16 GB), where it ran smoothly at 100% utilization without memory issues, resulting in stable and efficient model training.
 ---
 
 ## 6. Task 4: Bounding Box Optimization
