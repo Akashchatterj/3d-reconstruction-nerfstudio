@@ -27,7 +27,7 @@ The reconstruction pipeline consists of five main stages:
 
 **System Specifications:**
 - Operating System: Linux Ubentu
-- GPU: RTX 4080 Max-Q 
+- GPU: RTX 4080 Super 
 - CUDA Version: 11.8
 - Python Version: 3.8
 
@@ -227,7 +227,7 @@ The reconstruction demonstrates photorealistic quality suitable for high-quality
 
 **Impact:** Training often stopped before completion, preventing full model convergence and making experimentation time-consuming.
 
-**Resolution:** The training was successfully completed on a high-memory GPU (RTX 4080 Max-Q, 16 GB), where it ran smoothly at 100% utilization without memory issues, resulting in stable and efficient model training.
+**Resolution:** The training was successfully completed on a high-memory GPU (RTX 4080 Super, 16 GB), where it ran smoothly at 100% utilization without memory issues, resulting in stable and efficient model training.
 
 ---
 
