@@ -308,6 +308,7 @@ ns-export pointcloud \
 ## 8. Training Monitoring via Weights & Biases
 
 Training was monitored using W&B logging, providing real-time visualization of all metrics.
+
 ![Dashboard Link:](https://wandb.ai/chatterjeeakash887-prom-iit-rajasthan/nerfstudio-project/runs/uhesvnre?nw=nwuserchatterjeeakash887)
 
 **Key Observations from Training Curves:**
