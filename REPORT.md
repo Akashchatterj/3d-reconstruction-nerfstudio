@@ -393,5 +393,7 @@ This assignment provided invaluable experience with state-of-the-art 3D reconstr
 ---
 
 **Report Prepared By:** Akash Chatterjee 
+
 **Date:** OCT 14, 2025
+
 **Assignment:** 3D Reconstruction with Nerfstudio  
