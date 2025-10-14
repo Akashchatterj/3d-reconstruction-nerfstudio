@@ -236,26 +236,27 @@ The reconstruction demonstrates photorealistic quality suitable for high-quality
 ### 6.1 Cropping Strategy
 
 **Approach:**
-- Opened viewer at http://localhost:7007
-- Analyzed full scene reconstruction
-- Identified object of interest boundaries
+- After analyzing the NeRF reconstruction in the viewer (http://localhost:7007), the scene demonstrated excellent quality with minimal background artifacts. The default bounding box parameters were used rather than custom cropping, as the reconstruction was already well-centered and clean.
 
 **Bounding Box Parameters:**
 ```
-OBB Center: [x, y, z]
-OBB Rotation: [rx, ry, rz]
-OBB Scale: [sx, sy, sz]
+OBB Center: [0.0, 0.0, 0.0]
+OBB Rotation: [0.0, 0.0, 0.0]
+OBB Scale: [1.0, 1.0, 1.0]
 ```
 
 **Rationale:**
-[Explain why these specific parameters were chosen]
+Default parameters were selected because:
+- COLMAP naturally centered the coordinate system on the object.
+- No rotation adjustments needed.
+- Reconstruction showed minimal outliers requiring spatial cropping.
 
 ### 6.2 Impact on Export
 
 **Benefits of Cropping:**
-- Reduced point cloud size by [X%]
-- Focused on region of interest
-- Eliminated background noise
+- Simplified workflow - No manual bounding box tuning required.
+- Complete coverage - Ensured full object capture without accidental clipping.
+- Effective noise removal - Outlier removal algorithm eliminated spurious points without spatial cropping.
 
 ---
 
