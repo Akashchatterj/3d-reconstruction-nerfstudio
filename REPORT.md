@@ -289,7 +289,7 @@ ns-export pointcloud \
 
 ### 7.3 Quality Analysis
 
-![Point Cloud Visualization](outputs/pointcloud.png)
+![Point Cloud Visualization](outputs/visualizations/pointcloud.jpg)
 
 **Geometric Accuracy:**
 - [Assessment of 3D shape fidelity]
