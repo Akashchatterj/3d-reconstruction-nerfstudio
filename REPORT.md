@@ -228,6 +228,7 @@ The reconstruction demonstrates photorealistic quality suitable for high-quality
 **Impact:** Training often stopped before completion, preventing full model convergence and making experimentation time-consuming.
 
 **Resolution:** The training was successfully completed on a high-memory GPU (RTX 4080 Super, 16 GB), where it ran smoothly at 100% utilization without memory issues, resulting in stable and efficient model training.
+
 ---
 
 ## 6. Task 4: Bounding Box Optimization
