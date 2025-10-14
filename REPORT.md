@@ -165,8 +165,8 @@ ns-train nerfacto \
 ### 5.2 Training Process
 
 **Timeline:**
-- Start Time: [Timestamp]
-- End Time: [Timestamp]
+- Start Time: 12:30
+- End Time: 12:45
 - Total Duration: 15 minutes
 
 **Hardware Performance:**
