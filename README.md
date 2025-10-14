@@ -175,7 +175,7 @@ ns-export pointcloud \
 
 ### Point Cloud Export
 
-![Point Cloud](outputs/pointcloud.png)
+![Point Cloud](outputs/visualizations/pointcloud.jpg)
 
 **Specifications:**
 - Points: 1,000,000
